@@ -1,0 +1,777 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
+    <meta name="description" content="Khader Afeez - Electronics & Communication Engineer specializing in PCB design, robotics, and web development." />
+    <meta name="keywords" content="Khader Afeez, Electronics Engineer, PCB Design, Robotics, Web Development" />
+    <meta name="author" content="Khader Afeez" />
+    
+    <!-- Open Graph / Social Media Meta Tags -->
+    <meta property="og:title" content="Khader Afeez - Electronics & Communication Engineer" />
+    <meta property="og:description" content="Electronics & Communication Engineer passionate about hands-on innovation, blending PCB design, robotics, and web development." />
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="https://khaderafeez.com" />
+    <meta property="og:image" content="assets/img/og-image.jpg" />
+
+    <!-- Favicon -->
+    <link rel="shortcut icon" href="assets/img/favicon.png" type="image/png">
+    
+    <!-- Add touch-icon for iOS devices -->
+    <link rel="apple-touch-icon" href="assets/img/favicon.png">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+
+    <!-- Unicons -->
+    <link rel="stylesheet" href="https://unicons.iconscout.com/release/v4.0.0/css/line.css" />
+    
+    <!-- Font Awesome (for additional icons) -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+    <!-- Swiper CSS -->
+    <link rel="stylesheet" href="assets/css/swiper-bundle.min.css" />
+
+    <!-- CSS Files -->
+    <link rel="stylesheet" href="assets/css/base.css" />
+    <link rel="stylesheet" href="assets/css/components.css" />
+    <link rel="stylesheet" href="assets/css/sections.css" />
+
+    <!-- Animate on scroll CSS -->
+    <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
+
+    <title>Khader Afeez </title>
+
+    <!-- Preload Critical Fonts -->
+    <link rel="preload" href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&display=swap" as="style" onload="this.onload=null;this.rel='stylesheet'">
+    <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&display=swap"></noscript>
+
+    <!-- Structured Data -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "Person",
+      "name": "Khader Afeez",
+      "url": "https://khaderafeez.com",
+      "jobTitle": "Electronics & Communication Engineer",
+      "worksFor": {
+        "@type": "Organization",
+        "name": "Drift Pure Private Limited"
+      },
+      "alumniOf": {
+        "@type": "EducationalOrganization",
+        "name": "Yenepoya Institute of Technology"
+      },
+      "sameAs": [
+        "https://www.linkedin.com/in/khaderafeez/",
+        "https://github.com/khaderafeez",
+        "https://www.instagram.com/khader_afeez"
+      ]
+    }
+    </script>
+
+    <!-- Add CSS for touch feedback -->
+    <style>
+      .touch-active {
+        opacity: 0.7;
+        transform: scale(0.97);
+      }
+      
+      /* Add safe area insets for notched phones */
+      @supports (padding: max(0px)) {
+        .header, .footer__bg {
+          padding-left: max(var(--container-padding), env(safe-area-inset-left));
+          padding-right: max(var(--container-padding), env(safe-area-inset-right));
+        }
+        
+        .footer__bg {
+          padding-bottom: max(var(--space-4), env(safe-area-inset-bottom));
+        }
+      }
+      
+      /* Improve scrolling on iOS */
+      html, body {
+        -webkit-overflow-scrolling: touch;
+      }
+      
+      /* Prevent text size adjustment on orientation change */
+      html {
+        -webkit-text-size-adjust: 100%;
+      }
+    </style>
+</head>
+
+<body>
+    <!-- HEADER -->
+    <header class="header" id="header">
+        <nav class="nav container" role="navigation" aria-label="Main navigation">
+            <a href="#" class="nav__logo" aria-label="Home">Khader Afeez</a>
+
+            <div data-aos="fade-in" class="nav__menu" id="nav-menu" role="menu">
+                <ul class="nav__list grid" role="menubar">
+                    <li class="nav__item" role="none">
+                        <a href="#home" class="nav__link active-link" role="menuitem" aria-current="page">
+                            <i class="uil uil-estate nav__icon" aria-hidden="true"></i> Home
+                        </a>
+                    </li>
+
+                    <li class="nav__item" role="none">
+                        <a href="#about" class="nav__link" role="menuitem">
+                            <i class="uil uil-user nav__icon" aria-hidden="true"></i> About
+                        </a>
+                    </li>
+
+                   <!-- 
+
+                    <li class="nav__item" role="none">
+                        <a href="#education" class="nav__link" role="menuitem">
+                            <i class="uil uil-graduation-cap nav__icon" aria-hidden="true"></i> Education
+                        </a>
+                    </li>
+                    -->
+
+                    <li class="nav__item" role="none">
+                        <a href="#skills" class="nav__link" role="menuitem">
+                            <i class="uil uil-file nav__icon" aria-hidden="true"></i> Skills
+                        </a>
+                    </li>
+
+                    <li class="nav__item" role="none">
+                        <a href="#experience" class="nav__link" role="menuitem">
+                            <i class="uil uil-briefcase-alt nav__icon" aria-hidden="true"></i> Experience
+                        </a>
+                    </li>
+
+                    <li class="nav__item" role="none">
+                        <a href="#portfolio" class="nav__link" role="menuitem">
+                            <i class="uil uil-scenery nav__icon" aria-hidden="true"></i> Projects
+                        </a>
+                    </li>
+
+                    <li class="nav__item" role="none">
+                        <a href="#contact" class="nav__link" role="menuitem">
+                            <i class="uil uil-message nav__icon" aria-hidden="true"></i> Contact
+                        </a>
+                    </li>
+                </ul>
+                <button class="nav__close" id="nav-close" aria-label="Close menu">
+                    <i class="uil uil-times" aria-hidden="true"></i>
+                </button>
+            </div>
+
+            <div class="nav__btns">
+                <!-- Theme Change Button -->
+                <button class="change-theme" id="theme-button" aria-label="Toggle dark mode">
+                    <i class="uil uil-moon" aria-hidden="true"></i>
+                </button>
+
+                <button class="nav__toggle" id="nav-toggle" aria-label="Open menu">
+                    <i class="uil uil-apps" aria-hidden="true"></i>
+                </button>
+            </div>
+        </nav>
+    </header>
+
+    <!-- MAIN CONTENT -->
+    <main class="main">
+        <!-- HOME SECTION -->
+        <section class="home section" id="home">
+            <div data-aos="fade-up" data-aos-duration="800" class="home__container container grid">
+                <div class="home__content grid">
+                    <div class="home__social">
+                        <a href="https://www.instagram.com/khader_afeez?igsh=dW1nZ2pqNjJoOWlv" 
+                           target="_blank" 
+                           rel="noopener noreferrer" 
+                           class="home__social-icon" 
+                           aria-label="Instagram profile">
+                            <i class="uil uil-instagram"></i>
+                        </a>
+                        <a href="https://github.com/khaderafeez" 
+                           target="_blank" 
+                           rel="noopener noreferrer" 
+                           class="home__social-icon" 
+                           aria-label="GitHub profile">
+                            <i class="uil uil-github-alt"></i>
+                        </a>
+                        <a href="https://www.linkedin.com/in/khaderafeez/" 
+                           target="_blank" 
+                           rel="noopener noreferrer" 
+                           class="home__social-icon" 
+                           aria-label="LinkedIn profile">
+                            <i class="uil uil-linkedin-alt"></i>
+                        </a>
+                    </div>
+
+                    <div data-aos="fade-left" data-aos-duration="1000" class="home__img">
+                        <svg class="home__blob" viewBox="0 0 200 187" xmlns="http://www.w3.org/2000/svg"
+                            xmlns:xlink="http://www.w3.org/1999/xlink" aria-hidden="true">
+                            <mask id="mask0" mask-type="alpha">
+                                <path d="M190.312 36.4879C206.582 62.1187 201.309 102.826 182.328 134.186C163.346 165.547 
+                                130.807 187.559 100.226 186.353C69.6454 185.297 41.0228 161.023 21.7403 129.362C2.45775 
+                                97.8511 -7.48481 59.1033 6.67581 34.5279C20.9871 10.1032 59.7028 -0.149132 97.9666 
+                                0.00163737C136.23 0.303176 174.193 10.857 190.312 36.4879Z" />
+                            </mask>
+                            <g mask="url(#mask0)">
+                                <path d="M190.312 36.4879C206.582 62.1187 201.309 102.826 182.328 134.186C163.346 
+                                165.547 130.807 187.559 100.226 186.353C69.6454 185.297 41.0228 161.023 21.7403 
+                                129.362C2.45775 97.8511 -7.48481 59.1033 6.67581 34.5279C20.9871 10.1032 59.7028 
+                                -0.149132 97.9666 0.00163737C136.23 0.303176 174.193 10.857 190.312 36.4879Z" />
+
+                                <image class="home__blob-img" x="15" y="23" href="assets/img/perfil.png" 
+                                       alt="Profile illustration" width="170" height="170" />
+                            </g>
+                        </svg>
+                    </div>
+
+                    <div class="home__data">
+                        <h1 class="home__title">Hi!<span class="wave">👋</span>, I'm Afeez</h1>
+                        <h2 class="home__subtitle">
+                            and I'm <span class="auto-input"></span>
+                        </h2>
+                        <p class="home__description">
+                            Electronics & Communication 
+                            Engineer passionate about hands-on innovation, blending PCB design, robotics, and web development.
+                        </p>
+                        <a href="#contact" class="button button--flex">
+                            Contact Me <i class="uil uil-message button__icon" aria-hidden="true"></i>
+                        </a>
+                    </div>
+                </div>
+
+                <div class="home__scroll">
+                    <a href="#about" class="home__scroll-button button--flex" aria-label="Scroll down to About section">
+                        <i class="uil uil-mouse-alt home__scroll-mouse" aria-hidden="true"></i>
+                        <span class="home__scroll-name">Scroll down</span>
+                        <i class="uil uil-arrow-down home__scroll-arrow" aria-hidden="true"></i>
+                    </a>
+                </div>
+            </div>
+        </section>
+
+        <!-- ABOUT SECTION -->
+        <section class="about section" id="about">
+            <h2 class="section__title">About Me</h2>
+            <span class="section__subtitle">My Introduction</span>
+
+            <div data-aos="fade-up" data-aos-duration="800" class="about__container container grid">
+                <img src="assets/img/about.jpg" alt="Khader Afeez profile photo" class="about__img" loading="lazy" />
+
+                <div class="about__data">
+                    <p class="about__description">
+                        I'm Afeez, an Electronics & Communication Engineering graduate who transforms real-world problems into 
+                        tech solutions— from PCB design and robotics to custom hardware and web interfaces. 
+                        Though new to computer science, I've mastered HTML, CSS, JavaScript, and 
+                        when I'm not prototyping or coding, I'm sketching process diagrams or reverse-engineering hardware.
+                    </p>
+
+                    <div class="about__info">
+                        <div>
+                            <span class="about__info-title">20+</span>
+                            <span class="about__info-name">Completed <br />projects</span>
+                        </div>
+                        <div>
+                            <span class="about__info-title">4+</span>
+                            <span class="about__info-name">Years of <br />experience</span>
+                        </div>
+                        <div>
+                            <span class="about__info-title">5+</span>
+                            <span class="about__info-name">Technologies <br />mastered</span>
+                        </div>
+                    </div>
+
+                    <div class="about__buttons">
+                        <a download="" href="assets/pdf/khader-afeez-cv.pdf" class="button button--flex">
+                            Download CV <i class="uil uil-download-alt button__icon" aria-hidden="true"></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- EDUCATION SECTION -->
+        <section class="education section" id="education">
+            <h2 class="section__title">Education</h2>
+            <span class="section__subtitle">My Academic Journey</span>
+
+            <p class="education__quote">Education is not the learning of facts, but the training of the mind to think.</p>
+
+            <div data-aos="fade-up" data-aos-duration="800" class="education__container container grid">
+                <div class="education__content">
+                    <img src="assets/img/yenepoya.jpg" alt="Yenepoya Institute of Technology campus" class="education__img" loading="lazy">
+                    <div class="education__data">
+                        <h3 class="education__title">Bachelor of Engineering</h3>
+                        <p class="education__institution">Yenepoya Institute of Technology</p>
+                        <span class="education__duration">2020 - 2024</span>
+                        <p class="education__description">
+                            Completed Electronics and Communication Engineering with comprehensive knowledge in electronics, 
+                            communication systems, and related technologies. Focused on practical applications and hands-on projects.
+                        </p>
+                    </div>
+                </div>
+
+                <div class="education__content">
+                    <img src="assets\img\st jospeh .jpeg" alt="St. Joseph's Pre-University College campus" class="education__img" loading="lazy">
+                    <div class="education__data">
+                        <h3 class="education__title">Pre-University Education</h3>
+                        <p class="education__institution">St. Joseph's Pre-University College</p>
+                        <span class="education__duration">2018 - 2020</span>
+                        <p class="education__description">
+                            Pursued PCMB (Physics, Chemistry, Mathematics, Biology) stream with distinction.
+                            Built a strong foundation in science and mathematics that prepared me for engineering studies.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- SKILLS SECTION -->
+        <section class="skills section" id="skills">
+            <h2 class="section__title">Professional <span class="highlight">Skillset</span></h2>
+            <div class="skills__container">
+                <div data-aos="fade-up" data-aos-duration="800" data-aos-delay="100" class="skills__cards">
+                    <!-- C/C++ -->
+                    <div class="skills__card" tabindex="0">
+                        <i class="uil uil-brackets-curly skills__icon"></i>
+                        <span>C / C++</span>
+                    </div>
+                    <!-- JavaScript -->
+                    <div class="skills__card" tabindex="0">
+                        <i class="fab fa-js skills__icon"></i>
+                        <span>JavaScript</span>
+                    </div>
+                    <!-- Git -->
+                    <div class="skills__card" tabindex="0">
+                        <i class="fab fa-github skills__icon"></i>
+                        <span>Git & GitHub</span>
+                    </div>
+
+                    <!-- Arduino IDE -->
+                    <div class="skills__card" tabindex="0">
+                        <i class="fas fa-microchip skills__icon"></i>
+                        <span>Embedded Engineer</span>
+                    </div>
+
+                    <div class="skills__card" tabindex="0">
+                        <i class="uil uil-circuit skills__icon"></i>
+                        <span>PCB Designer</span>
+                    </div>
+                    <!-- Python -->
+                    <div class="skills__card" tabindex="0">
+                        <i class="fab fa-python skills__icon"></i>
+                        <span>Python</span>
+                    </div>
+                   
+                    
+                    <!-- Raspberry Pi -->
+                    <div class="skills__card" tabindex="0">
+                        <i class="fab fa-raspberry-pi skills__icon"></i>
+                        <span>Raspberry Pi</span>
+                    </div>
+                    <!-- OpenCV -->
+                    <div class="skills__card" tabindex="0">
+                        <i class="uil uil-eye skills__icon"></i>
+                        <span>OpenCV</span>
+                    </div>
+                   
+                    </div>
+                </div>
+            </div>
+
+            <h2 class="section__title" style="margin-top:3rem;">Tools <span class="highlight">I use</span></h2>
+            <div class="skills__container">
+                <div data-aos="fade-up" data-aos-duration="800" data-aos-delay="200" class="skills__cards">
+                    <!-- VS Code -->
+                    <div class="skills__card" tabindex="0">
+                        <i class="uil uil-visual-studio skills__icon"></i>
+                        <span>VS Code</span>
+                    </div>
+                    <!-- Figma -->
+                    <div class="skills__card" tabindex="0">
+                        <i class="fab fa-figma skills__icon"></i>
+                        <span>Figma</span>
+                    </div>
+                    <!-- Canva -->
+                    <div class="skills__card" tabindex="0">
+                        <i class="uil uil-palette skills__icon"></i>
+                        <span>Canva</span>
+                    </div>
+                    <!-- Ubuntu/Linux -->
+                    <div class="skills__card" tabindex="0">
+                        <i class="fab fa-linux skills__icon"></i>
+                        <span>Linux</span>
+                    </div>
+                    <!-- Windows -->
+                    <div class="skills__card" tabindex="0">
+                        <i class="fab fa-windows skills__icon"></i>
+                        <span>Windows</span>
+                    </div>
+
+                    <!-- KiCad -->
+                    <div class="skills__card" tabindex="0">
+                        <i class="uil uil-circuit skills__icon"></i>
+                        <span>KiCad</span>
+                    </div>
+                   
+                    <!-- Autodesk -->
+                    <div class="skills__card" tabindex="0">
+                        <i class="uil uil-vector-square skills__icon"></i>
+                        <span>Autodesk</span>
+                    </div>
+                     <!-- Fusion 360 -->
+                     <div class="skills__card" tabindex="0">
+                        <i class="fas fa-cube skills__icon"></i>
+                        <span>Fusion 360</span>
+                    </div>
+                    
+                    <div class="skills__card" tabindex="0">
+                        <i class="uil uil-presentation-edit skills__icon"></i>
+                        <span>Thinkercad</span>
+                    </div>
+
+                    <div class="skills__card" tabindex="0">
+                        <i class="uil uil-server-network skills__icon"></i>
+                        <span>Wokwi</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+        
+
+        <!-- CERTIFICATES SECTION -->
+        <!--
+        <section class="certificate section" id="certificates">
+            <h2 class="section__title">Certificates</h2>
+            <span class="section__subtitle">Professional Qualifications</span>
+            <span class="section__subtitle">Scroll or swipe to see more</span>
+
+            <div data-aos="fade-up" data-aos-duration="800" class="portfolio__container container swiper-container">
+                <div class="swiper-wrapper">
+                    
+                    <div class="portfolio__content grid swiper-slide">
+                        <img src="assets/img/certificate-html.jpg" alt="HTML Certificate" class="portfolio__img" loading="lazy">
+
+                        <div class="portfolio__data">
+                            <h3 class="portfolio__title">HTML Certificate</h3>
+                            <p class="portfolio__description">Advanced HTML5 certification from Programming Hub</p>
+                            <a href="assets/pdf/certificate-html.pdf" target="_blank" rel="noopener noreferrer"
+                                class="button button--flex button--small portfolio__button">
+                                Preview
+                                <i class="uil uil-arrow-right button__icon" aria-hidden="true"></i>
+                            </a>
+                        </div>
+                    </div>
+
+                    <div class="portfolio__content grid swiper-slide">
+                        <img src="assets/img/certificate-css.jpg" alt="CSS Certificate" class="portfolio__img" loading="lazy">
+
+                        <div class="portfolio__data">
+                            <h3 class="portfolio__title">CSS Certificate</h3>
+                            <p class="portfolio__description">Advanced CSS3 certification from Programming Hub</p>
+                            <a href="assets/pdf/certificate-css.pdf" target="_blank" rel="noopener noreferrer"
+                                class="button button--flex button--small portfolio__button">
+                                Preview
+                                <i class="uil uil-arrow-right button__icon" aria-hidden="true"></i>
+                            </a>
+                        </div>
+                    </div>
+                   
+
+                    <div class="portfolio__content grid swiper-slide">
+                        <img src="assets/img/certificate-js.jpg" alt="JavaScript Certificate" class="portfolio__img" loading="lazy">
+
+                        <div class="portfolio__data">
+                            <h3 class="portfolio__title">JavaScript Certificate</h3>
+                            <p class="portfolio__description">JavaScript fundamentals certification</p>
+                            <a href="assets/pdf/certificate-js.pdf" target="_blank" rel="noopener noreferrer"
+                                class="button button--flex button--small portfolio__button">
+                                Preview
+                                <i class="uil uil-arrow-right button__icon" aria-hidden="true"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                
+            
+                <div class="swiper-button-next">
+                    <i class="uil uil-angle-right-b swiper-portfolio-icon" aria-hidden="true"></i>
+                </div>
+                <div class="swiper-button-prev">
+                    <i class="uil uil-angle-left-b swiper-portfolio-icon" aria-hidden="true"></i>
+                </div>
+
+                
+                <div class="swiper-pagination"></div>
+            </div>
+        </section>
+        -->
+
+        <!-- EXPERIENCE SECTION -->
+        <section class="experience section" id="experience">
+            <h2 class="section__title">Experience</h2>
+            <span class="section__subtitle">My professional journey</span>
+
+            <div data-aos="fade-up" data-aos-duration="800" class="experience__timeline container">
+                <div class="experience__container right">
+                    <div class="experience__content">
+                        <div class="experience__tag">
+                            <h3>Drift Pure Private Limited</h3>
+                        </div>
+                        <div class="experience__desc">
+                            <h4>Chief Technology Officer (CTO)</h4>
+                            <p>2024 - Present</p>
+                            <p class="experience__details">
+                                Leading the development of Idea Solution, a project focused on seawater desalination 
+                                using solar harness method. Responsible for technical strategy, team management, and 
+                                product development.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="experience__container left">
+                    <div class="experience__content">
+                        <div class="experience__tag">
+                            <h3>Invihub Technosolutions Private Limited</h3>
+                        </div>
+                        <div class="experience__desc">
+                            <h4>PCB Design & Electronics Intern</h4>
+                            <p>2023 (6 months)</p>
+                            <p class="experience__details">
+                                Gained hands-on experience in PCB designing, fabrication process, and basic electronics.
+                                Worked on multiple projects involving circuit design, component selection, and testing.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="experience__container right">
+                    <div class="experience__content">
+                        <div class="experience__tag">
+                            <h3>Freelance Projects</h3>
+                        </div>
+                        <div class="experience__desc">
+                            <h4>Electronics Engineer</h4>
+                            <p>2022 - 2023</p>
+                            <p class="experience__details">
+                                Designed and developed custom electronic solutions for various clients.
+                                Projects included IoT devices, automation systems, and embedded systems.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- PORTFOLIO SECTION -->
+        <section class="portfolio section" id="portfolio">
+            <h2 class="section__title">Projects</h2>
+            <span class="section__subtitle">My Recent Work</span>
+
+            <div data-aos="fade-up" data-aos-duration="800" class="portfolio__container container swiper-container">
+                <div class="swiper-wrapper">
+                    <!-- Project 1 -->
+                    <div class="portfolio__content grid swiper-slide">
+                        <img src="assets\img\solar desalination.jpeg" alt="Seawater Desalination Project" class="portfolio__img" loading="lazy">
+
+                        <div class="portfolio__data">
+                            <h3 class="portfolio__title">Seawater Desalination</h3>
+                            <p class="portfolio__description">
+                                Solar-powered desalination system designed to provide clean water in coastal areas with limited resources.
+                            </p>
+                            <div class="portfolio__tags">
+                                <span class="portfolio__tag">Solar Energy</span>
+                                <span class="portfolio__tag">IoT</span>
+                                <span class="portfolio__tag">Embedded Systems</span>
+                            </div>
+                            <a href="#" class="button button--flex button--small portfolio__button">
+                                View Details
+                                <i class="uil uil-arrow-right button__icon" aria-hidden="true"></i>
+                            </a>
+                        </div>
+                    </div>
+                    
+                    <!-- Project 2 -->
+                    <div class="portfolio__content grid swiper-slide">
+                        <img src="assets\img\smart.jpeg" alt="Smart Home Automation System" class="portfolio__img" loading="lazy">
+
+                        <div class="portfolio__data">
+                            <h3 class="portfolio__title">Smart Home Automation</h3>
+                            <p class="portfolio__description">
+                                IoT-based home automation system with custom PCB design and mobile app control.
+                            </p>
+                            <div class="portfolio__tags">
+                                <span class="portfolio__tag">PCB Design</span>
+                                <span class="portfolio__tag">IoT</span>
+                                <span class="portfolio__tag">Mobile App</span>
+                            </div>
+                            <a href="#" class="button button--flex button--small portfolio__button">
+                                View Details
+                                <i class="uil uil-arrow-right button__icon" aria-hidden="true"></i>
+                            </a>
+                        </div>
+                    </div>
+                    
+                    <!-- Project 3 -->
+                    <div class="portfolio__content grid swiper-slide">
+                        <img src="assets\img\IOT-based-Smart-Agriculture-Monitoring-System-Project-Block.png" alt="Agricultural Monitoring System" class="portfolio__img" loading="lazy">
+
+                        <div class="portfolio__data">
+                            <h3 class="portfolio__title">Agricultural Monitoring</h3>
+                            <p class="portfolio__description">
+                                Sensor-based system for monitoring soil moisture, temperature, and other parameters for optimal farming.
+                            </p>
+                            <div class="portfolio__tags">
+                                <span class="portfolio__tag">Sensors</span>
+                                <span class="portfolio__tag">Data Analysis</span>
+                                <span class="portfolio__tag">Raspberry Pi</span>
+                            </div>
+                            <a href="#" class="button button--flex button--small portfolio__button">
+                                View Details
+                                <i class="uil uil-arrow-right button__icon" aria-hidden="true"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Add Navigation -->
+                <div class="swiper-button-next">
+                    <i class="uil uil-angle-right-b swiper-portfolio-icon" aria-hidden="true"></i>
+                </div>
+                <div class="swiper-button-prev">
+                    <i class="uil uil-angle-left-b swiper-portfolio-icon" aria-hidden="true"></i>
+                </div>
+
+                <!-- Add Pagination -->
+                <div class="swiper-pagination"></div>
+            </div>
+
+            <div class="portfolio__github-blend">
+                <h3 class="blend-text">View my GitHub page for all projects</h3>
+                <p class="blend-text">Explore complete source code and documentation</p>
+                
+            </div>
+            <div class="portfolio__github-btn">
+                <a href="https://github.com/khaderafeez" target="_blank" rel="noopener noreferrer" class="button button--flex">
+                    <span> GitHub</span>
+                    <i class="uil uil-github button__icon" aria-hidden="true"></i>
+                </a>
+            </div>
+        </section>
+
+        <!-- CONTACT SECTION -->
+        <section class="contact section" id="contact">
+            <h2 class="section__title">Contact Me</h2>
+            <span class="section__subtitle">Get in touch</span>
+
+            <div data-aos="fade-up" data-aos-duration="800" class="contact__container container grid">
+                <div>
+                    <div class="contact__information">
+                        <i class="uil uil-envelope contact__icon"></i>
+                        <div>
+                            <h3 class="contact__title">Email</h3>
+                            <a href="mailto:khaderafeez16@gmail.com" class="contact__subtitle">khaderafeez16@gmail.com</a>
+                        </div>
+                    </div>
+                    <div class="contact__information">
+                        <i class="uil uil-github-alt contact__icon"></i>
+                        <div>
+                            <h3 class="contact__title">GitHub</h3>
+                            <a href="https://github.com/khaderafeez" target="_blank" rel="noopener noreferrer" class="contact__subtitle">github.com/khaderafeez</a>
+                        </div>
+                    </div>
+                    <div class="contact__information">
+                        <i class="uil uil-map-marker contact__icon"></i>
+                        <div>
+                            <h3 class="contact__title">Location</h3>
+                            <span class="contact__subtitle">Mangalore, Karnataka, India</span>
+                        </div>
+                    </div>
+                </div>
+
+                <form action="https://formsubmit.co/3291f4338dc27f344cdc564a1df42f85" method="POST" class="contact__form grid" role="form" aria-label="Contact form">
+                    <div class="contact__inputs grid">
+                        <div class="contact__content">
+                            <label for="name" class="contact__label">Name</label>
+                            <input name="name" id="name" type="text" class="contact__input" required aria-required="true">
+                        </div>
+                        <div class="contact__content">
+                            <label for="email" class="contact__label">Email</label>
+                            <input name="email" id="email" type="email" class="contact__input" required aria-required="true">
+                        </div>
+                    </div>
+                    <div class="contact__content">
+                        <label for="subject" class="contact__label">Subject</label>
+                        <input name="subject" id="subject" type="text" class="contact__input" required aria-required="true">
+                    </div>
+                    <div class="contact__content">
+                        <label for="message" class="contact__label">Message</label>
+                        <textarea name="message" id="message" cols="0" rows="7" class="contact__input" required aria-required="true"></textarea>
+                    </div>
+
+                    <div>
+                        <button type="submit" class="button button--flex" aria-label="Send message">
+                            Send Message
+                            <i class="uil uil-message button__icon" aria-hidden="true"></i>
+                        </button>
+                    </div>
+                </form>
+            </div>
+        </section>
+    </main>
+
+    <!-- FOOTER -->
+    <footer class="footer">
+        <div class="footer__bg">
+            <div class="footer__container container grid">
+                <div>
+                    <h1 class="footer__title">Khader Afeez</h1>
+                    <span class="footer__subtitle">Electronics Engineer</span>
+                </div>
+
+                <ul class="footer__links">
+                    <li>
+                        <a href="#about" class="footer__link">About</a>
+                    </li>
+                    <li>
+                        <a href="#portfolio" class="footer__link">Project </a>
+                    </li>
+                    <li>
+                        <a href="#contact" class="footer__link">Contact</a>
+                    </li>
+                </ul>
+
+                <div class="footer__socials">
+                    <a href="https://www.instagram.com/khader_afeez?igsh=dW1nZ2pqNjJoOWlv" target="_blank" rel="noopener noreferrer" class="footer__social" aria-label="Instagram">
+                        <i class="uil uil-instagram" aria-hidden="true"></i>
+                    </a>
+                    <a href="https://github.com/khaderafeez" target="_blank" rel="noopener noreferrer" class="footer__social" aria-label="GitHub">
+                        <i class="uil uil-github-alt" aria-hidden="true"></i>
+                    </a>
+                    <a href="https://www.linkedin.com/in/khaderafeez/" target="_blank" rel="noopener noreferrer" class="footer__social" aria-label="LinkedIn">
+                        <i class="uil uil-linkedin-alt" aria-hidden="true"></i>
+                    </a>
+                </div>
+            </div>
+            <p class="footer__copy">&copy; 2024 Khader Afeez | All Rights Reserved</p>
+        </div>
+    </footer>
+
+    <!-- SCROLL UP -->
+    <a href="#" class="scrollup" id="scroll-up" aria-label="Scroll to top">
+        <i class="uil uil-arrow-up scrollup__icon" aria-hidden="true"></i>
+    </a>
+
+    <!-- SWIPER JS -->
+    <script src="assets/js/swiper-bundle.min.js"></script>
+
+    <!-- TYPED.JS -->
+    <script src="https://cdn.jsdelivr.net/npm/typed.js@2.0.12"></script>
+    
+    <!-- ANIMATE ON SCROLL JS -->
+    <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+    
+    <!-- MAIN JS -->
+    <script src="assets/js/main.js"></script>
+</body>
+
+</html>
