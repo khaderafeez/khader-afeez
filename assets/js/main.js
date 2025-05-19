@@ -1,13 +1,15 @@
 /*==================== MENU SHOW Y HIDDEN ====================*/
 const navMenu = document.getElementById("nav-menu"),
   navToggle = document.getElementById("nav-toggle"),
-  navClose = document.getElementById("nav-close")
+  navClose = document.getElementById("nav-close"),
+  navLinks = document.querySelectorAll(".nav__link")
 
 /*===== MENU SHOW =====*/
 /* Validate if constant exists */
 if (navToggle) {
   navToggle.addEventListener("click", () => {
     navMenu.classList.add("show-menu")
+    overlay.classList.add("show-overlay")
     document.body.style.overflow = "hidden" // Prevent scrolling when menu is open
   })
 }
@@ -17,20 +19,18 @@ if (navToggle) {
 if (navClose) {
   navClose.addEventListener("click", () => {
     navMenu.classList.remove("show-menu")
+    overlay.classList.remove("show-overlay")
     document.body.style.overflow = "" // Re-enable scrolling
   })
 }
 
 /*==================== REMOVE MENU MOBILE ====================*/
-const navLink = document.querySelectorAll(".nav__link")
-
 function linkAction() {
-  const navMenu = document.getElementById("nav-menu")
-  // When we click on each nav__link, we remove the show-menu class
   navMenu.classList.remove("show-menu")
+  overlay.classList.remove("show-overlay")
   document.body.style.overflow = "" // Re-enable scrolling
 }
-navLink.forEach((n) => n.addEventListener("click", linkAction))
+navLinks.forEach((n) => n.addEventListener("click", linkAction))
 
 /*==================== SCROLL SECTIONS ACTIVE LINK ====================*/
 const sections = document.querySelectorAll("section[id]")
@@ -423,3 +423,17 @@ window.addEventListener("load", () => {
     window.AOS.refresh()
   }
 })
+
+// Create overlay element
+const overlay = document.createElement('div');
+overlay.className = 'nav__overlay';
+document.body.appendChild(overlay);
+
+// Hide menu
+function hideMenu() {
+    navMenu.classList.remove('show-menu');
+    overlay.classList.remove('show-overlay');
+    document.body.style.overflow = '';
+}
+
+overlay.addEventListener('click', hideMenu);
