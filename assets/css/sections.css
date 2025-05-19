@@ -762,6 +762,60 @@ a.contact__subtitle:hover {
     font-size: var(--normal-font-size);
   }
 
+  /* Mobile Navigation - Slide-in Menu */
+  .nav__menu {
+    position: fixed;
+    left: -100%;
+    top: 0;
+    bottom: 0;
+    width: 80%;
+    background-color: var(--body-color);
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.15);
+    padding: 3rem 1.5rem;
+    border-radius: 0 1rem 1rem 0;
+    transition: 0.4s ease-in-out;
+    z-index: 100;
+  }
+
+  .show-menu {
+    left: 0;
+  }
+
+  .nav__list {
+    display: flex;
+    flex-direction: column;
+    row-gap: 2rem;
+  }
+
+  .nav__close {
+    position: absolute;
+    right: 1.5rem;
+    top: 1rem;
+    font-size: 1.5rem;
+    cursor: pointer;
+    color: var(--title-color);
+  }
+
+  .nav__close:hover {
+    color: var(--first-color);
+  }
+  
+  /* Add overlay when menu is open */
+  .nav__overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(0, 0, 0, 0.5);
+    z-index: 99;
+    display: none;
+  }
+  
+  .show-menu ~ .nav__overlay {
+    display: block;
+  }
+
   .services__container {
     grid-template-columns: max-content;
     justify-content: center;
@@ -803,6 +857,28 @@ a.contact__subtitle:hover {
 @media screen and (max-width: 480px) {
   .home__title {
     font-size: var(--h1-font-size);
+  }
+
+  /* Increase text size for better readability */
+  body {
+    font-size: var(--normal-font-size);
+  }
+  
+  p, .home__description {
+    font-size: 1rem;
+    line-height: 1.7;
+  }
+  
+  h1, .home__title {
+    font-size: 2rem;
+  }
+  
+  h2 {
+    font-size: 1.5rem;
+  }
+  
+  h3, .home__subtitle {
+    font-size: 1.25rem;
   }
 
   .skills__cards {
@@ -848,11 +924,75 @@ a.contact__subtitle:hover {
     text-align: center;
   }
 
+  /* Prevent text overflow */
+  * {
+    word-wrap: break-word;
+    overflow-wrap: break-word;
+  }
+  
+  /* Ensure all containers are properly sized */
+  .container {
+    width: 100%;
+    max-width: 100%;
+  }
+  
+  /* Ensure images don't overflow */
+  img {
+    max-width: 100%;
+    height: auto;
+  }
+  
+  /* Better button sizing for touch */
+  .button {
+    padding: 1rem 1.5rem;
+    font-size: 1rem;
+  }
+
+  /* Improved spacing between sections */
+  section {
+    padding: 4rem 1.5rem 2rem;
+  }
+  
+  .section__title {
+    margin-bottom: 3rem;
+  }
+  
+  .section__subtitle {
+    margin-bottom: 2rem;
+  }
+
+  /* Better image proportions */
+  .home__blob {
+    width: 200px;
+    margin: 0 auto;
+    max-width: 80%;
+  }
+  
+  .about__img {
+    width: 200px;
+    max-width: 80%;
+  }
+  
+  /* Consistent padding and margins */
+  .container {
+    padding-left: 1.5rem;
+    padding-right: 1.5rem;
+  }
+  
+  .home__container,
+  .about__container,
+  .skills__container,
+  .education__container,
+  .contact__container {
+    padding: 0 1rem;
+  }
+
+  /* Improved spacing between elements */
   .home__social {
     display: flex;
     justify-content: center;
     gap: var(--space-4);
-    margin-bottom: var(--space-4);
+    margin-bottom: var(--space-6);
   }
 
   .home__blob {
@@ -878,6 +1018,38 @@ a.contact__subtitle:hover {
 
   .home__description {
     font-size: var(--small-font-size);
+  }
+
+  /* Project Cards - Single column layout */
+  .project__content {
+    width: 100%;
+    margin-bottom: 2rem;
+  }
+  
+  .project__img {
+    width: 100%;
+    height: auto;
+  }
+  
+  .project__container {
+    grid-template-columns: 1fr;
+    row-gap: 2.5rem;
+  }
+  
+  .project__card {
+    padding: 1.25rem;
+    width: 100%;
+  }
+  
+  /* Skills cards adjustments */
+  .skills__cards {
+    grid-template-columns: 1fr 1fr;
+    gap: 1rem;
+  }
+  
+  .skills__card {
+    min-height: 110px;
+    padding: 1rem;
   }
 
   .experience__timeline::after {
@@ -925,6 +1097,36 @@ a.contact__subtitle:hover {
     font-size: var(--smaller-font-size);
   }
 
+  /* Contact Form Improvements */
+  .contact__form {
+    width: 100%;
+  }
+  
+  .contact__inputs {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+  }
+  
+  .contact__input {
+    width: 100%;
+    padding: 1rem;
+    font-size: 1rem;
+    height: 3.5rem; /* Larger touch targets */
+  }
+  
+  .contact__button {
+    padding: 1rem 1.5rem;
+    font-size: 1rem;
+    margin-top: 1rem;
+    width: 100%; /* Full width button */
+  }
+  
+  textarea.contact__input {
+    height: 11rem;
+    resize: none;
+  }
+  
   .contact__information {
     margin-bottom: var(--space-3);
   }
@@ -946,6 +1148,28 @@ a.contact__subtitle:hover {
   .contact__content {
     padding: var(--space-3);
     margin-bottom: var(--space-3);
+  }
+  
+  /* Adjust footer for mobile */
+  .footer__container {
+    grid-template-columns: 1fr;
+    row-gap: 2rem;
+    text-align: center;
+  }
+  
+  .footer__links {
+    justify-content: center;
+  }
+  
+  .footer__socials {
+    justify-self: center;
+  }
+  
+  /* Ensure all text is readable */
+  .footer__copy,
+  .footer__subtitle,
+  .footer__link {
+    font-size: 0.9rem;
   }
 }
 

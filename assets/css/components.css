@@ -14,11 +14,17 @@
   border: none;
   padding: var(--space-1);
   border-radius: 50%;
+  width: 40px;
+  height: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 .change-theme:hover {
   color: var(--first-color);
   transform: rotate(15deg) scale(1.1);
+  background-color: rgba(74, 137, 220, 0.1);
 }
 
 /*==================== NAVIGATION ====================*/
@@ -70,11 +76,19 @@
   background: transparent;
   border: none;
   padding: var(--space-1);
+  width: 40px;
+  height: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  background-color: rgba(74, 137, 220, 0.1);
 }
 
 .nav__toggle:hover {
   color: var(--first-color);
   transform: scale(1.1);
+  background-color: rgba(74, 137, 220, 0.2);
 }
 
 @media screen and (max-width: 767px) {
@@ -85,12 +99,13 @@
     width: 100%;
     background-color: var(--body-color);
     padding: var(--space-5) var(--space-4) var(--space-6);
-    box-shadow: 0 -1px 4px rgba(0, 0, 0, 0.15);
+    box-shadow: 0 -5px 20px rgba(0, 0, 0, 0.15);
     border-radius: 1.5rem 1.5rem 0 0;
     transition: var(--transition-smooth);
     z-index: var(--z-fixed);
     max-height: 80vh;
     overflow-y: auto;
+    backdrop-filter: blur(10px);
   }
 
   /* Hide navbar on scroll down for mobile */
@@ -105,19 +120,59 @@
   .nav__list {
     grid-template-columns: repeat(3, 1fr);
     gap: var(--space-4);
+    padding: 2rem 0;
+  }
+
+  .nav__item {
+    margin-bottom: 1rem;
   }
 
   .nav__link {
-    font-size: var(--smaller-font-size);
+    font-size: var(--small-font-size);
+    padding: 0.5rem 1rem;
+    border-radius: 0.5rem;
+    transition: all 0.3s ease;
+  }
+
+  .nav__link:hover,
+  .nav__link.active-link {
+    background-color: rgba(74, 137, 220, 0.1);
   }
 
   .nav__icon {
-    font-size: 1.1rem;
+    font-size: 1.2rem;
+    margin-bottom: var(--space-1);
   }
 
   /* Make buttons more touch-friendly on mobile */
   .button {
     min-height: 44px;
+  }
+
+  .nav__close {
+    position: absolute;
+    right: var(--space-3);
+    bottom: var(--space-2);
+    font-size: 1.5rem;
+    cursor: pointer;
+    color: var(--first-color);
+    transition: var(--transition-base);
+    background: transparent;
+    border: none;
+    padding: var(--space-1);
+    width: 40px;
+    height: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    background-color: rgba(74, 137, 220, 0.1);
+  }
+
+  .nav__close:hover {
+    color: var(--first-color-alt);
+    transform: rotate(90deg);
+    background-color: rgba(74, 137, 220, 0.2);
   }
 }
 
@@ -160,31 +215,14 @@
   color: var(--first-color);
 }
 
-.nav__link:hover::after {
+.nav__link:hover::after,
+.nav__link.active-link::after {
   width: 70%;
 }
 
 .nav__icon {
   font-size: 1.2rem;
   margin-bottom: var(--space-1);
-}
-
-.nav__close {
-  position: absolute;
-  right: var(--space-3);
-  bottom: var(--space-2);
-  font-size: 1.5rem;
-  cursor: pointer;
-  color: var(--first-color);
-  transition: var(--transition-base);
-  background: transparent;
-  border: none;
-  padding: var(--space-1);
-}
-
-.nav__close:hover {
-  color: var(--first-color-alt);
-  transform: rotate(90deg);
 }
 
 /* Show menu */
@@ -195,10 +233,6 @@
 /* Active link */
 .active-link {
   color: var(--first-color);
-}
-
-.active-link::after {
-  width: 70%;
 }
 
 /*==================== BUTTONS ====================*/
@@ -310,6 +344,8 @@
   display: flex;
   align-items: center;
   justify-content: center;
+  width: 40px;
+  height: 40px;
 }
 
 .scrollup:hover {
@@ -336,27 +372,84 @@
 }
 
 /*==================== SKILLS CARDS ====================*/
+.skills__cards {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+  gap: var(--space-6);
+  justify-content: center;
+  align-items: center;
+  margin: var(--space-7) auto;
+  width: 100%;
+}
+
 .skills__card {
+  background: rgba(255, 255, 255, 0.1);
+  border: 2px solid var(--first-color);
+  border-radius: 1.5rem;
+  box-shadow: 0 4px 24px 0 rgba(74, 137, 220, 0.15), 0 1.5px 8px 0 rgba(0, 0, 0, 0.05);
+  padding: var(--space-6);
+  min-width: 140px;
+  min-height: 140px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
   transition: var(--transition-bounce);
+  cursor: pointer;
+  backdrop-filter: blur(4px);
   position: relative;
   overflow: hidden;
 }
 
 .skills__card:hover {
-  transform: translateY(-8px);
+  transform: translateY(-6px) scale(1.02);
+  box-shadow: 0 8px 32px 0 rgba(74, 137, 220, 0.25), 0 2px 12px 0 rgba(0, 0, 0, 0.1);
 }
 
-.skills__card:focus {
-  outline: 2px solid var(--first-color);
-  outline-offset: 2px;
+body.dark-theme .skills__card {
+  background: rgba(42, 42, 42, 0.7);
+  border-color: var(--first-color);
+  box-shadow: 0 4px 24px 0 rgba(93, 156, 236, 0.15), 0 1.5px 8px 0 rgba(0, 0, 0, 0.2);
 }
 
-.skills__logo {
-  transition: var(--transition-bounce);
+body.dark-theme .skills__card:hover {
+  box-shadow: 0 8px 32px 0 rgba(93, 156, 236, 0.3), 0 2px 12px 0 rgba(0, 0, 0, 0.2);
 }
 
-.skills__logo:hover {
-  transform: translateY(-4px);
+.skills__icon {
+  font-size: 3.5rem;
+  margin-bottom: var(--space-4);
+  padding: var(--space-2);
+  border-radius: var(--space-2);
+  transition: var(--transition-base);
+  background: rgba(255, 255, 255, 0.1);
+}
+
+body.dark-theme .skills__icon {
+  background: rgba(42, 42, 42, 0.3);
+}
+
+.skills__card:hover .skills__icon {
+  transform: scale(1.1);
+  filter: drop-shadow(0 0 15px rgba(74, 137, 220, 0.7));
+}
+
+body.dark-theme .skills__card:hover .skills__icon {
+  filter: drop-shadow(0 0 15px rgba(93, 156, 236, 0.7));
+}
+
+.skills__card span {
+  color: var(--title-color);
+  font-size: 1.1rem;
+  font-weight: var(--font-semi-bold);
+  text-align: center;
+  letter-spacing: 0.02em;
+  margin-top: var(--space-2);
+  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+body.dark-theme .skills__card span {
+  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
 }
 
 /*==================== PORTFOLIO TAGS ====================*/
@@ -381,6 +474,24 @@ body.dark-theme .portfolio__tag {
   color: var(--first-color-lighter);
 }
 
+.portfolio__github-blend {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  text-align: center;
+  padding: 2rem;
+}
+
+.portfolio__github-btn {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 2rem auto;
+  width: 100%;
+}
+
 /*==================== MEDIA QUERIES ====================*/
 @media screen and (max-width: 350px) {
   .nav__menu {
@@ -396,12 +507,29 @@ body.dark-theme .portfolio__tag {
   .nav__logo {
     font-size: 1.2rem;
   }
-}
 
-@media screen and (max-width: 480px) {
   .button--flex {
     width: 100%;
     justify-content: center;
+  }
+
+  .skills__cards {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1rem;
+  }
+
+  .skills__card {
+    min-height: 120px;
+    padding: 1rem;
+  }
+
+  .skills__icon {
+    font-size: 2.5rem;
+    margin-bottom: var(--space-2);
+  }
+
+  .skills__card span {
+    font-size: var(--smaller-font-size);
   }
 }
 
@@ -429,24 +557,8 @@ body.dark-theme .portfolio__tag {
   .change-theme {
     margin: 0;
   }
-}
 
-.portfolio__github-blend {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    position: relative;
-    text-align: center;
-    padding: 2rem;
-}
-
-
-
-.portfolio__github-btn {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    margin: 2rem auto;
-    width: 100%;
+  .skills__cards {
+    grid-template-columns: repeat(4, 1fr);
+  }
 }
