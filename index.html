@@ -104,70 +104,59 @@
 <body>
     <!-- HEADER -->
     <header class="header" id="header">
-        <nav class="nav container" role="navigation" aria-label="Main navigation">
-            <a href="#" class="nav__logo" aria-label="Home">Khader Afeez</a>
+        <nav class="nav container">
+            <!-- Logo -->
+            <a href="#" class="nav__logo">Khader Afeez</a>
 
-            <div data-aos="fade-in" class="nav__menu" id="nav-menu" role="menu">
-                <ul class="nav__list grid" role="menubar">
-                    <li class="nav__item" role="none">
-                        <a href="#home" class="nav__link active-link" role="menuitem" aria-current="page">
-                            <i class="uil uil-estate nav__icon" aria-hidden="true"></i> Home
+            <!-- Mobile Menu -->
+            <div class="nav__menu" id="nav-menu">
+                <ul class="nav__list">
+                    <li class="nav__item">
+                        <a href="#home" class="nav__link active-link">
+                            <i class="uil uil-estate nav__icon"></i> 
+                            <span>Home</span>
                         </a>
                     </li>
-
-                    <li class="nav__item" role="none">
-                        <a href="#about" class="nav__link" role="menuitem">
-                            <i class="uil uil-user nav__icon" aria-hidden="true"></i> About
+                    <li class="nav__item">
+                        <a href="#about" class="nav__link">
+                            <i class="uil uil-user nav__icon"></i> 
+                            <span>About</span>
                         </a>
                     </li>
-
-                   <!-- 
-
-                    <li class="nav__item" role="none">
-                        <a href="#education" class="nav__link" role="menuitem">
-                            <i class="uil uil-graduation-cap nav__icon" aria-hidden="true"></i> Education
+                    <li class="nav__item">
+                        <a href="#skills" class="nav__link">
+                            <i class="uil uil-file nav__icon"></i> 
+                            <span>Skills</span>
                         </a>
                     </li>
-                    -->
-
-                    <li class="nav__item" role="none">
-                        <a href="#skills" class="nav__link" role="menuitem">
-                            <i class="uil uil-file nav__icon" aria-hidden="true"></i> Skills
+                    <li class="nav__item">
+                        <a href="#experience" class="nav__link">
+                            <i class="uil uil-briefcase-alt nav__icon"></i> 
+                            <span>Experience</span>
                         </a>
                     </li>
-
-                    <li class="nav__item" role="none">
-                        <a href="#experience" class="nav__link" role="menuitem">
-                            <i class="uil uil-briefcase-alt nav__icon" aria-hidden="true"></i> Experience
+                    <li class="nav__item">
+                        <a href="#portfolio" class="nav__link">
+                            <i class="uil uil-scenery nav__icon"></i> 
+                            <span>Projects</span>
                         </a>
                     </li>
-
-                    <li class="nav__item" role="none">
-                        <a href="#portfolio" class="nav__link" role="menuitem">
-                            <i class="uil uil-scenery nav__icon" aria-hidden="true"></i> Projects
-                        </a>
-                    </li>
-
-                    <li class="nav__item" role="none">
-                        <a href="#contact" class="nav__link" role="menuitem">
-                            <i class="uil uil-message nav__icon" aria-hidden="true"></i> Contact
+                    <li class="nav__item">
+                        <a href="#contact" class="nav__link">
+                            <i class="uil uil-message nav__icon"></i> 
+                            <span>Contact</span>
                         </a>
                     </li>
                 </ul>
-                <button class="nav__close" id="nav-close" aria-label="Close menu">
-                    <i class="uil uil-times" aria-hidden="true"></i>
-                </button>
+                <i class="uil uil-times nav__close" id="nav-close"></i>
             </div>
 
+            <!-- Theme Toggle and Menu Toggle -->
             <div class="nav__btns">
-                <!-- Theme Change Button -->
-                <button class="change-theme" id="theme-button" aria-label="Toggle dark mode">
-                    <i class="uil uil-moon" aria-hidden="true"></i>
-                </button>
-
-                <button class="nav__toggle" id="nav-toggle" aria-label="Open menu">
-                    <i class="uil uil-apps" aria-hidden="true"></i>
-                </button>
+                <i class="uil uil-moon change-theme" id="theme-button"></i>
+                <div class="nav__toggle" id="nav-toggle">
+                    <i class="uil uil-bars"></i>
+                </div>
             </div>
         </nav>
     </header>
@@ -772,6 +761,9 @@
     
     <!-- MAIN JS -->
     <script src="assets/js/main.js"></script>
+
+    <!-- Scroll Reveal -->
+    <script src="https://unpkg.com/scrollreveal"></script>
 </body>
 
 </html>
