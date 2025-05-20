@@ -137,13 +137,13 @@
 @media screen and (max-width: 767px) {
   .nav__menu {
     position: fixed;
-    top: 0;
+    top: var(--header-height);
     right: -100%;
     width: 80%;
     max-width: 300px;
-    height: 100vh;
+    height: calc(100vh - var(--header-height));
     background-color: var(--body-color);
-    padding: 2rem;
+    padding: 1.5rem;
     transition: 0.3s;
     box-shadow: -2px 0 4px rgba(0, 0, 0, 0.1);
     z-index: 100;
@@ -153,32 +153,22 @@
     right: 0;
   }
 
-  .nav__menu-header {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    margin-bottom: 2rem;
-  }
-
   .nav__list {
-    display: flex;
-    flex-direction: column;
-    gap: 1.5rem;
-    margin-top: 2rem;
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: repeat(6, auto);
+    gap: 0.5rem;
+    padding: 1rem 0;
   }
 
   .nav__link {
-    display: flex;
-    align-items: center;
-    gap: 0.5rem;
-    font-size: 1.1rem;
-    padding: 0.5rem 0;
-    color: var(--text-color);
-    transition: 0.3s;
+    font-size: 1rem;
+    padding: 0.75rem 1rem;
   }
 
-  .nav__icon {
-    font-size: 1.2rem;
+  .nav__link:hover,
+  .nav__link.active-link {
+    background-color: rgba(74, 137, 220, 0.1);
   }
 
   /* Hide navbar on scroll down for mobile */
@@ -190,36 +180,8 @@
     transition: transform 0.4s ease;
   }
 
-  .nav__list {
-    grid-template-columns: repeat(3, 1fr);
-    gap: var(--space-4);
-    padding: 2rem 0;
-  }
-
-  .nav__item {
-    margin-bottom: 1rem;
-  }
-
-  .nav__link {
-    font-size: var(--small-font-size);
-    padding: 0.5rem 1rem;
-    border-radius: 0.5rem;
-    transition: all 0.3s ease;
-  }
-
-  .nav__link:hover,
-  .nav__link.active-link {
-    background-color: rgba(74, 137, 220, 0.1);
-  }
-
   .nav__icon {
     font-size: 1.2rem;
-    margin-bottom: var(--space-1);
-  }
-
-  /* Make buttons more touch-friendly on mobile */
-  .button {
-    min-height: 44px;
   }
 
   .nav__close {
@@ -235,29 +197,41 @@
   .nav__close:hover {
     color: var(--first-color);
   }
+
+  /* Make buttons more touch-friendly on mobile */
+  .button {
+    min-height: 44px;
+  }
 }
 
 .nav__list {
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: var(--space-5);
+  grid-template-columns: 1fr;
+  grid-template-rows: repeat(6, auto);
+  gap: 0.5rem;
 }
 
-@media screen and (min-width: 568px) and (max-width: 767px) {
-  .nav__list {
-    grid-template-columns: repeat(4, 1fr);
-  }
+.nav__item {
+  width: 100%;
 }
 
 .nav__link {
   display: flex;
-  flex-direction: column;
   align-items: center;
-  font-size: var(--small-font-size);
-  color: var(--title-color);
-  font-weight: var(--font-medium);
-  transition: var(--transition-base);
-  position: relative;
+  gap: 0.5rem;
+  padding: 0.75rem 1rem;
+  color: var(--text-color);
+  transition: 0.3s;
+  width: 100%;
+  border-radius: 0.25rem;
+}
+
+/* Remove any other grid layouts */
+@media screen and (min-width: 568px) and (max-width: 767px) {
+  .nav__list {
+    grid-template-columns: 1fr;
+    grid-template-rows: repeat(6, auto);
+  }
 }
 
 .nav__link::after {
@@ -595,20 +569,15 @@ body.dark-theme .portfolio__tag {
 }
 
 @media screen and (min-width: 768px) {
-  .nav {
-    height: calc(var(--header-height) + 1.5rem);
-    column-gap: var(--space-5);
+  .nav__list {
+    grid-template-columns: 1fr;
+    grid-template-rows: repeat(6, auto);
   }
 
   .nav__icon,
   .nav__close,
   .nav__toggle {
     display: none;
-  }
-
-  .nav__list {
-    display: flex;
-    column-gap: var(--space-5);
   }
 
   .nav__menu {

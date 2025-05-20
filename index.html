@@ -104,63 +104,59 @@
 <body>
     <!-- HEADER -->
     <header class="header" id="header">
-        <nav class="nav container" role="navigation" aria-label="Main navigation">
-            <!-- Logo - Only show in header, not in menu -->
-            <a href="#" class="nav__logo" aria-label="Home">Khader Afeez</a>
+        <nav class="nav container">
+            <!-- Logo -->
+            <a href="#" class="nav__logo">Khader Afeez</a>
 
             <!-- Mobile Menu -->
             <div class="nav__menu" id="nav-menu">
                 <ul class="nav__list">
                     <li class="nav__item">
                         <a href="#home" class="nav__link active-link">
-                            <i class="uil uil-estate nav__icon" aria-hidden="true"></i> 
+                            <i class="uil uil-estate nav__icon"></i> 
                             <span>Home</span>
                         </a>
                     </li>
                     <li class="nav__item">
                         <a href="#about" class="nav__link">
-                            <i class="uil uil-user nav__icon" aria-hidden="true"></i> 
+                            <i class="uil uil-user nav__icon"></i> 
                             <span>About</span>
                         </a>
                     </li>
                     <li class="nav__item">
                         <a href="#skills" class="nav__link">
-                            <i class="uil uil-file nav__icon" aria-hidden="true"></i> 
+                            <i class="uil uil-file nav__icon"></i> 
                             <span>Skills</span>
                         </a>
                     </li>
                     <li class="nav__item">
                         <a href="#experience" class="nav__link">
-                            <i class="uil uil-briefcase-alt nav__icon" aria-hidden="true"></i> 
+                            <i class="uil uil-briefcase-alt nav__icon"></i> 
                             <span>Experience</span>
                         </a>
                     </li>
                     <li class="nav__item">
                         <a href="#portfolio" class="nav__link">
-                            <i class="uil uil-scenery nav__icon" aria-hidden="true"></i> 
+                            <i class="uil uil-scenery nav__icon"></i> 
                             <span>Projects</span>
                         </a>
                     </li>
                     <li class="nav__item">
                         <a href="#contact" class="nav__link">
-                            <i class="uil uil-message nav__icon" aria-hidden="true"></i> 
+                            <i class="uil uil-message nav__icon"></i> 
                             <span>Contact</span>
                         </a>
                     </li>
                 </ul>
-                <button class="nav__close" id="nav-close" aria-label="Close menu">
-                    <i class="uil uil-times" aria-hidden="true"></i>
-                </button>
+                <i class="uil uil-times nav__close" id="nav-close"></i>
             </div>
 
-            <!-- Navigation Buttons -->
+            <!-- Theme Toggle and Menu Toggle -->
             <div class="nav__btns">
-                <button class="change-theme" id="theme-button" aria-label="Toggle dark mode">
-                    <i class="uil uil-moon" aria-hidden="true"></i>
-                </button>
-                <button class="nav__toggle" id="nav-toggle" aria-label="Open menu">
-                    <i class="uil uil-apps" aria-hidden="true"></i>
-                </button>
+                <i class="uil uil-moon change-theme" id="theme-button"></i>
+                <div class="nav__toggle" id="nav-toggle">
+                    <i class="uil uil-bars"></i>
+                </div>
             </div>
         </nav>
     </header>
@@ -765,6 +761,9 @@
     
     <!-- MAIN JS -->
     <script src="assets/js/main.js"></script>
+
+    <!-- Scroll Reveal -->
+    <script src="https://unpkg.com/scrollreveal"></script>
 </body>
 
 </html>

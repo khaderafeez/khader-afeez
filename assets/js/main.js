@@ -2,15 +2,22 @@
 const navMenu = document.getElementById("nav-menu"),
   navToggle = document.getElementById("nav-toggle"),
   navClose = document.getElementById("nav-close"),
-  navLinks = document.querySelectorAll(".nav__link")
+  navLinks = document.querySelectorAll(".nav__link"),
+  header = document.getElementById("header"),
+  scrollUp = document.getElementById("scroll-up")
 
 /*===== MENU SHOW =====*/
 /* Validate if constant exists */
 if (navToggle) {
   navToggle.addEventListener("click", () => {
     navMenu.classList.add("show-menu")
-    overlay.classList.add("show-overlay")
-    document.body.style.overflow = "hidden" // Prevent scrolling when menu is open
+    // Add overlay
+    const overlay = document.createElement('div')
+    overlay.classList.add('nav__overlay')
+    document.body.appendChild(overlay)
+    setTimeout(() => {
+      overlay.classList.add('show-overlay')
+    }, 10)
   })
 }
 
@@ -19,25 +26,44 @@ if (navToggle) {
 if (navClose) {
   navClose.addEventListener("click", () => {
     navMenu.classList.remove("show-menu")
-    overlay.classList.remove("show-overlay")
-    document.body.style.overflow = "" // Re-enable scrolling
+    // Remove overlay
+    const overlay = document.querySelector('.nav__overlay')
+    if (overlay) {
+      overlay.classList.remove('show-overlay')
+      setTimeout(() => {
+        overlay.remove()
+      }, 300)
+    }
   })
 }
 
 /*==================== REMOVE MENU MOBILE ====================*/
 function linkAction() {
   navMenu.classList.remove("show-menu")
-  overlay.classList.remove("show-overlay")
-  document.body.style.overflow = "" // Re-enable scrolling
 }
 navLinks.forEach((n) => n.addEventListener("click", linkAction))
 
 /*==================== SCROLL SECTIONS ACTIVE LINK ====================*/
 const sections = document.querySelectorAll("section[id]")
 
-function scrollActive() {
-  const scrollY = window.pageYOffset
+// Combined scroll event handler
+function handleScroll() {
+  // Header scroll effect
+  if (window.scrollY >= 200) {
+    header.classList.add("scroll-header")
+  } else {
+    header.classList.remove("scroll-header")
+  }
 
+  // Scroll up button visibility
+  if (window.scrollY >= 560) {
+    scrollUp.classList.add("show-scroll")
+  } else {
+    scrollUp.classList.remove("show-scroll")
+  }
+
+  // Active section highlighting
+  const scrollY = window.pageYOffset
   sections.forEach((current) => {
     const sectionHeight = current.offsetHeight
     const sectionTop = current.offsetTop - 50
@@ -51,13 +77,15 @@ function scrollActive() {
     }
   })
 }
-window.addEventListener("scroll", scrollActive)
+
+// Single scroll event listener
+window.addEventListener("scroll", handleScroll)
 
 /*==================== CHANGE BACKGROUND HEADER ====================*/
 function scrollHeader() {
   const nav = document.getElementById("header")
-  // When the scroll is greater than 80 viewport height, add the scroll-header class to the header tag
-  if (this.scrollY >= 80) {
+  // When the scroll is greater than 200 viewport height, add the scroll-header class to the header tag
+  if (this.scrollY >= 200) {
     nav.classList.add("scroll-header")
   } else {
     nav.classList.remove("scroll-header")
@@ -66,24 +94,13 @@ function scrollHeader() {
 window.addEventListener("scroll", scrollHeader)
 
 /*==================== SHOW SCROLL UP ====================*/
-const scrollUp = document.getElementById("scroll-up");
-
-// Add click handler for smooth scrolling
-scrollUp.addEventListener('click', () => {
-    window.scrollTo({
-        top: 0,
-        behavior: 'smooth'
-    });
-});
-
-// Existing scroll visibility logic
-window.addEventListener("scroll", () => {
-    if (window.scrollY >= 560) {
-        scrollUp.classList.add("show-scroll");
-    } else {
-        scrollUp.classList.remove("show-scroll");
-    }
-});
+// Remove duplicate declaration since we already have it at the top
+// When the scroll is higher than 560 viewport height, add the show-scroll class to the a tag with the scroll-top class
+if (this.scrollY >= 560) {
+  scrollUp.classList.add("show-scroll");
+} else {
+  scrollUp.classList.remove("show-scroll");
+}
 
 /*==================== DARK LIGHT THEME ====================*/
 const themeButton = document.getElementById("theme-button")
@@ -118,33 +135,6 @@ themeButton.addEventListener("click", () => {
   localStorage.setItem("selected-theme", getCurrentTheme())
   localStorage.setItem("selected-icon", getCurrentIcon())
 })
-
-// Add code to hide navbar on scroll down and show on scroll up
-let lastScrollTop = 0
-
-window.addEventListener(
-  "scroll",
-  () => {
-    const header = document.getElementById("header")
-    const currentScroll = window.pageYOffset || document.documentElement.scrollTop
-
-    // Only apply this behavior on mobile
-    if (window.innerWidth <= 767) {
-      if (currentScroll > lastScrollTop && currentScroll > 100) {
-        // Scrolling down
-        header.classList.add("hide-header")
-      } else {
-        // Scrolling up
-        header.classList.remove("hide-header")
-      }
-    } else {
-      header.classList.remove("hide-header")
-    }
-
-    lastScrollTop = currentScroll <= 0 ? 0 : currentScroll
-  },
-  false,
-)
 
 /*==================== PORTFOLIO SWIPER  ====================*/
 document.addEventListener("DOMContentLoaded", () => {
@@ -333,12 +323,12 @@ document.addEventListener("DOMContentLoaded", () => {
 
   // Close menu when clicking outside
   document.addEventListener("click", (e) => {
-    const navMenu = document.getElementById("nav-menu")
-    const navToggle = document.getElementById("nav-toggle")
-
-    if (navMenu.classList.contains("show-menu") && !navMenu.contains(e.target) && e.target !== navToggle) {
+    if (e.target.classList.contains('nav__overlay')) {
       navMenu.classList.remove("show-menu")
-      document.body.style.overflow = ""
+      e.target.classList.remove("show-overlay")
+      setTimeout(() => {
+        e.target.remove()
+      }, 300)
     }
   })
 
