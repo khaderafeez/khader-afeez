@@ -1,8 +1,8 @@
-# Personal Portfolio Website
+[# Personal Portfolio Website
 
 A modern, responsive personal portfolio website for Khader Afeez, an Electronics & Communication Engineer. This website showcases skills, education, experience, and projects with a clean and professional design.
 
-![Portfolio Website Preview](assets/img/portfolio-preview.png)
+https://khader-afeez.netlify.app/
 
 ## Features
 
@@ -47,3 +47,4 @@ portfolio-website/
    ```bash
    git clone https://github.com/yourusername/portfolio-website.git
    cd portfolio-website
+](https://khader-afeez.netlify.app/)
